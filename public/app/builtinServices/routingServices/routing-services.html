@@ -1,0 +1,79 @@
+<div ng-controller="ControllerQ" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">Built-in Routing Services.</h3>
+
+    </div>
+
+
+    <div class="panel-body">
+
+
+        <p><b>Important: this info is referred to the built-in routing system of
+        AngularJS, the ngRoute module. This information is not applicable to the
+        more advanced routing system defined by the module UI Router.</b></p>
+
+        <p><b>Notes about the built-in routing system (ngRoute):</b></p>
+
+        <ul>
+            <li>We need to load angular-route.js, inject the module dependency ('ngRoute')
+                and add a div with the attribute <code>ng-view</code> in index.html.</li>
+            <li>Routing allows us to load views and their associated controllers in a single-page
+            application.</li>
+            <li>We inject $routeProvider in app.config to map views and controllers to Url's.</li>
+            <li>We use $route to load the correct view whenever a new Url is entered
+            by the user.</li>
+            <li>We use $routeParams to capture the Url parameters. We define the Url parameters
+            when we configure the routes: <code>.when('/page/:param1/:param2', {})</code>, and
+            then we can retrieve the params using <code>var param1 = $routeParams.param1;</code>
+            </li>
+            <li>The links to our routes have to be written as <code>href="#/page'</code></li>
+            <li>There are several events that get triggered when a route is called. In order
+            to make use of these events, we need to inject $rootScope and use
+                <code>$rootScope.$on()</code>. The route events are:</li>
+            <ul>
+                <li>$routeChangeStart</li>
+                <li>$routeChangeSuccess</li>
+                <li>$routeChangeError</li>
+                <li>$routeUpdate</li>
+            </ul>
+
+            <li>To handle route events, we use <code>app.run()</code>. App.run() is used to include
+            initializacion code in a module. In this case, we will inject $rootScope to it and
+            using it we will be able to handle the route events.</li>
+
+
+        </ul>
+
+
+
+        <p><b>Process to configure routes:</b></p>
+        <ol>
+            <li>Inject $routeProvider in app.config()</li>
+            <li>Define routes with <code>$routeProvider.when('/page', {})</code></li>
+            <li>Configuration options:</li>
+            <ul>
+                <li>templateUrl</li>
+                <li>controller</li>
+                <li>controllerAs</li>
+                <li>resolve: allows you to add a list of dependencies that will
+                be injected to the controller when the route is called. Most of the
+                time, resolve is configured as a promise. Once the promise is
+                resolved, the route is loaded. Resolve avoids the problem that
+                occurs when a page is loaded before its data is available. Once a dependency
+                is listed in the resolve object, we need to inject it in the controller
+                that will make use of it.</li>
+            </ul>
+            <li>To deal with undefined Url's, we use <code>.otherwise('/page')</code></li>
+
+        </ol>
+
+
+
+
+
+    </div>
+
+
+</div>

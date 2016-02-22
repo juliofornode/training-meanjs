@@ -1,0 +1,31 @@
+<div ng-controller="ControllerSharing" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">Sharing data in your application using Services.</h3>
+
+    </div>
+
+
+    <div class="panel-body">
+
+        <p><b>Notes:</b></p>
+        <ul>
+            <li>Services are a great way to share data among different controllers in
+            our application.</li>
+            <li>Services are singletons. That means that there is only one instance of
+            each of them. This means also that if we modify the service data, this
+            data is going to be changed everywhere the service has been instantiated.
+            If, for example, we call the service in a controller using
+            <code>myService = $scope.myData;</code> and by that we change the
+            content of this object in the controller, we must remember that those
+            changes will appear everywhere else the service is being instantiated.</li>
+
+        </ul>
+
+
+
+    </div>
+
+
+</div>

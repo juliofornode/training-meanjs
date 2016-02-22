@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html ng-app="miApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Entrenamiento</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app/bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app/app.css">
+  <script src="app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body class="container">
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" ui-sref="home">Mean.js</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Service Creation <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a ui-sref="home">Home</a></li>
+              <li><a ui-sref="providers">Provider Function</a></li>
+              <li><a ui-sref="decoratorDirectives">Factory Function</a></li>
+              <li><a ui-sref="transclusionDirectives">Service Function</a></li>
+              <li><a ui-sref="structuralDirectives">Value Function</a></li>
+              <li><a ui-sref="constantFunction">Constant Function</a></li>
+              <li><a ui-sref="dependency-anotations">Dependency Annotations</a></li>
+
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Built-in Services <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a ui-sref="qService">$q: promises</a></li>
+              <li><a ui-sref="routingServices">Routing Services</a></li>
+              <li><a ui-sref="cookies">Cookies</a></li>
+              <li><a ui-sref="log">Log</a></li>
+
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Networking Services <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a ui-sref="httpService">$http</a></li>
+              <li><a ui-sref="transformations">Transformations and Interceptors</a></li>
+              <li><a ui-sref="resourceService">$resource</a></li>
+
+            </ul>
+          </li>
+
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Caching and Sharing <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a ui-sref="caching">Caching</a></li>
+              <li><a ui-sref="sharing">Sharing</a></li>
+
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Service Decorators <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a ui-sref="serviceDecorators">Intro</a></li>
+
+
+            </ul>
+          </li>
+
+
+        </ul>
+
+
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div ui-view></div>
+
+  <script src="app/bower_components/lodash/dist/lodash.js"></script>
+  <script src="app/bower_components/jquery/dist/jquery.js"></script>
+  <script src="app/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="app/bower_components/angular/angular.js"></script>
+  <script src="app/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="app/bower_components/angular-resource/angular-resource.min.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/services/home/home.js"></script>
+  <script src="app/services/providerFunction/providers.js"></script>
+  <script src="app/services/providerFunction/widget001/widget001.js"></script>
+  <script src="app/services/factoryFunction/decoratorDirectives.js"></script>
+  <script src="app/services/factoryFunction/decorator001/decorator001.js"></script>
+  <script src="app/services/factoryFunction/decorator002/decorator002.js"></script>
+  <script src="app/services/serviceFunction/transclusionDirectives.js"></script>
+  <script src="app/services/serviceFunction/transclusion001/transclusion001.js"></script>
+  <script src="app/services/serviceFunction/transclusion002/transclusion002.js"></script>
+  <script src="app/services/valueFunction/structuralDirectives.js"></script>
+  <script src="app/services/valueFunction/structural001/structural001.js"></script>
+  <script src="app/services/valueFunction/structural002/structural002.js"></script>
+  <script src="app/services/constantFunction/constantFunction.js"></script>
+  <script src="app/builtinServices/qService/qService.js"></script>
+  <script src="app/builtinServices/routingServices/routingServices.js"></script>
+  <script src="app/builtinServices/cookies/cookies.js"></script>
+  <script src="app/builtinServices/log/log.js"></script>
+  <script src="app/networkingServices/httpService/httpService.js"></script>
+  <script src="app/networkingServices/resourceService/resourceService.js"></script>
+  <script src="app/cachingSharing/cachingSharing.js"></script>
+  <script src="app/cachingSharing/caching/caching.js"></script>
+  <script src="app/cachingSharing/sharing/sharing.js"></script>
+  <script src="app/serviceDecorators/serviceDecorators.js"></script>
+
+</body>
+</html>

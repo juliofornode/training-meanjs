@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">
+
+            <b>Name: {{user.name}}</b>
+            <button class="btn btn-default" ng-click="toggle()">Toggle</button>
+
+        </h3>
+
+
+    </div>
+
+    <div class="panel-body" ng-show="expanded">
+
+        <p>Age: {{user.age}}</p>
+        <p>Brothers and Sisters:</p>
+        <ul>
+            <li ng-repeat="sister in user.sisters"> {{ sister.name }}, {{ sister.age }} </li>
+        </ul>
+
+        <br/>
+
+        <button ng-click="mark()" ng-hide="marked">Mark</button>
+        <p ng-show="marked">Marked!</p>
+
+
+    </div>
+
+</div>
+
+

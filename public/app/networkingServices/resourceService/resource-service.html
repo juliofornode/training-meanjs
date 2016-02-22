@@ -1,0 +1,69 @@
+<div ng-controller="ControllerResource" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">$resource for simple RESTful APIs.</h3>
+
+    </div>
+
+
+    <div class="panel-body">
+
+        <p><b>Notes:</b></p>
+        <ul>
+            <li>In order to use $resource, we need to load the angular-resource module and to add
+            the module dependency (ngResource).</li>
+            <li>$resource is just an abstraction layer above $http, designed with the goal in mind
+            of having a simple and quick way to manage restful apis.</li>
+            <li>The $resource documentation highlights two important concepts for this service: what
+            is called a "class" <code>var Books = $resource('api/books/:bookId')</code> and what
+            are called the "instances" of that class <code>var book5 = Books.get({bookId: 5})</code> (this
+            gets you the whole book object that has the id of 5).</li>
+            <li>Methods of a $resource class:</li>
+            <ol>
+                <li>get(): retrieve a particular item.</li>
+                <li>save(): create a new item.</li>
+                <li>query(): retrieve all items.</li>
+                <li>remove() and delete() do the same: delete an item.</li>
+                <li>You can define custom methods.</li>
+            </ol>
+            <li>Methods of a $resource instance:</li>
+            <ol>
+                <li>Entity properties (title, author, etc).</li>
+                <li>$promise: gives you access to the promise created when connecting with the server.</li>
+                <li>$resolved: boolean that tells you if the promise has been resolved or not.</li>
+                <li>$get, $save, $query, $remove/$delete.</li>
+                <li>custom methods (prefixed by $).</li>
+            </ol>
+
+        </ul>
+
+
+        <p><b>Using $resource:</b></p>
+        <ol>
+            <li>Create a service using the factory function.</li>
+            <li>Inject $resource.</li>
+            <li>The only purpose of this service is to return a $resource class that we can manipulate later.</li>
+            <li>The $resource class will have the following parameters:</li>
+                <ul>
+                    <li>url of the server api</li>
+                    <li>the second parameter is where you set parameter defaults.</li>
+                    <li>the third parameter allows you to set additional methods on top of the default methods of
+                        the $resource class.</li>
+                </ul>
+
+        </ol>
+
+
+        <p><b>Example: the following data is being retrieved using $resource.</b></p>
+
+        <ul>
+            <li ng-repeat="novela in novelas">{{ novela.title }}</li>
+        </ul>
+
+
+
+    </div>
+
+
+</div>

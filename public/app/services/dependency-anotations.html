@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">Dependency Annotations</h3>
+
+    </div>
+
+    <div class="panel-body">
+
+        <p>To avoid problems with minification, we must annotate the service dependencies as strings in an array that includes the
+            callback function.</p>
+
+        <p><b>Important (1): </b>If the callback function is an anonymous function, the ending array bracket must be
+            placed at the end of the function.</p>
+
+        <p><b>Important (2): </b>Remember to annotate also the app.config() and anywhere else
+        where you are injecting services.</p>
+
+        <p><b>Important (3): </b>We can also use the $inject service: <code>functionName.$inject = ['serviceName']</code></p>
+
+    </div>
+
+
+
+</div>
+

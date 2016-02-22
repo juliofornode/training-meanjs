@@ -1,0 +1,32 @@
+<div ng-controller="ControllerGetAll" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">The $http Service: get all</h3>
+
+    </div>
+
+
+    <div class="panel-body">
+
+        <a ui-sref="createOne">Create a new Book.</a>
+
+        <p><b>This is from the server:</b></p>
+
+        <div class="well well-default" ng-repeat="libro in libros">
+
+            <p><b>Title:</b> {{ libro.title }} </p>
+            <p><b>Author:</b> {{ libro.author}} </p>
+            <p><b>Year published:</b> {{ libro.year_published }}  </p>
+            <p><b>Id:</b> {{ libro.book_id }} </p>
+            <a href="#/updateOne/{{ libro.book_id }}">Edit</a>
+            <a ng-click="deleteOne(libro.book_id)">Delete</a>
+
+        </div>
+
+
+
+    </div>
+
+
+</div>

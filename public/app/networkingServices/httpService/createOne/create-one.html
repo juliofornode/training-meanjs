@@ -1,0 +1,51 @@
+<div ng-controller="ControllerCreateOne" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">The $http Service: update</h3>
+
+    </div>
+
+
+    <div class="panel-body">
+
+        <form class="form-horizontal" role="form">
+
+            <div class="form-group">
+                <label for="bookTitle" class="col-sm-1 control-label">Title</label>
+                <div class="col-sm-4">
+                    <input ng-model="newBook.title" type="text" class="form-control"
+                           id="bookTitle" placeholder="Title">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="bookAuthor" class="col-sm-1 control-label">Author</label>
+                <div class="col-sm-4">
+                    <input ng-model="newBook.author" type="text" class="form-control"
+                           id="bookAuthor" placeholder="Author">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="bookPublished" class="col-sm-1 control-label">Year</label>
+                <div class="col-sm-4">
+                    <input ng-model="newBook.year_published" type="text" class="form-control"
+                           id="bookPublished" placeholder="Year Published">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-5">
+                    <button class="btn btn-default" ng-click="createOne()">Create</button>
+                </div>
+            </div>
+
+        </form>
+
+
+
+    </div>
+
+
+</div>

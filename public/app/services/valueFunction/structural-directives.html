@@ -1,0 +1,31 @@
+<div ng-controller="SDcontroller" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">Services created with the Value Function.</h3>
+
+    </div>
+
+    <div class="panel-body">
+
+        <p>You can use the Value Function instead of the Factory Function when you are not going to have
+            parameters (when you don't need to inject anything into the Factory Function).</p>
+
+        <p>Examples of Services created with the Value Function:</p>
+
+        <ul>
+
+            <li ng-repeat="s in structurals">
+                <b>{{ s.name }}</b> - {{ s.description }}
+                <p><a ui-sref='{{ s.state }}'>Link to the example</a></p>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+
+
+</div>

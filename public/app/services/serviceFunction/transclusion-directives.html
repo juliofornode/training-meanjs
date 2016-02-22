@@ -1,0 +1,40 @@
+<div ng-controller="TDcontroller" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">Services Created with the Service Function.</h3>
+
+    </div>
+
+    <div class="panel-body">
+
+        <p>The only difference with the Factory Function is that while the Factory Function uses the
+        Module Pattern, the Service Function uses the Constructor Pattern. It uses <code>this.</code> to define
+        its variables and methods, and it requires the keyword <code>new</code> to be instantiated.</p>
+
+        <p>The Service Function may be more recommendable than the Factory Function when we are
+        dealing with cases of inheritance hierarchies. In that case, instantiating a new object using the
+        keyword <code>new</code> will ensure that the object inherits properly from its prototype.</p>
+
+        <p>Important: in cases of inheritance as the one demonstrated in the first example, the Service
+        function shows its advantage over the Factory Function. If we use the Factory Function here, we
+        would have an error.</p>
+
+        <p>Examples of Services created with the Service Function:</p>
+
+        <ul>
+
+            <li ng-repeat="t in transclusions">
+                <b>{{ t.name }}</b> - {{ t.description }}
+                <p><a ui-sref='{{ t.state }}'>Link to the example</a></p>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+
+
+</div>

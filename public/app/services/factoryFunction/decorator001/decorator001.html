@@ -1,0 +1,20 @@
+<div ng-controller="ControllerDecorator001">
+
+    <h3>This is coming from the service. Auto: {{ myAuto }}</h3>
+
+    <p>This decorator directive adds the directive as attribute with the size variable as a value
+    of the directive.</p>
+
+    <p>In the script, the controller sets a default value for the size and the directive
+    uses the link function.</p>
+
+    <p>In the link function, we use <code>scope.$watch</code> to watch if the user enters a new size value,
+    and if that happens we use <code>element.css('font-size', newValue)</code> to change the font-size
+    css attribute of the element.</p>
+
+    <p decorator001="mySize">If the user enters a new % value, the size of this text will change.</p>
+
+    <input ng-model="mySize">
+
+
+</div>

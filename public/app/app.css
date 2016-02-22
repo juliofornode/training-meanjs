@@ -1,0 +1,15 @@
+body, .navbar-default, .navbar-brand, .panel-default, .panel-title, .panel-body {
+  color: #4d4d4d !important;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.verde {
+  color: green;
+}
+
+.rojo {
+  color: red;
+}

@@ -1,0 +1,35 @@
+<div ng-controller="ControllerConstant" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">Services created with the Constant Function.</h3>
+
+    </div>
+
+    <div class="panel-body">
+
+        <p>The Constant Function just registers a service to be used by the dependency injection system. It
+            does not call the Factory Function nor the Provider Function.</p>
+
+        <p>A service created with the Constant Function can be injected into a module configuration function
+            (aka: app.config())</p>
+
+        <p>A service created with the Constant Function cannot be overriden by a decorator service.</p>
+
+        <p>Examples of Services created with the Value Function:</p>
+
+        <p><b>These values are coming from a service created by the Constant Function:</b></p>
+        <ul>
+
+            <li>Country: {{ pais }}</li>
+            <li>State: {{ estado }}</li>
+
+        </ul>
+
+    </div>
+
+
+
+
+
+</div>

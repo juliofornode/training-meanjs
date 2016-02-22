@@ -1,0 +1,95 @@
+<div ng-controller="ControllerGetAll" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">The $http Service.</h3>
+
+    </div>
+
+
+    <div class="panel-body">
+        
+        <p><b>Notes:</b></p>
+        <ul>
+            <li>$http is the main service to communicate with a server.</li>
+            <li>It gets a promise, with success and error options.</li>
+
+        </ul>
+
+
+        <p><b>Main operations (CRUD):</b></p>
+
+        <ul>
+
+            <li><b>Get all:</b>
+                <ol>
+                    <li>In the service, the function getAll returns $http with the get method and the api/items
+                        url as a promise with .then (response.data) and .catch ($q.reject) options.</li>
+                    <li>In the controller, inject the service, call the service.getAll function with .then
+                        and .catch options, and assign $scope.items to the response. </li>
+                </ol>
+
+            </li>
+
+            <li><b>Get one by id:</b>
+                <ol>
+                    <li>In the route definition, we use a token to include the parameter in the url api/items/:id</li>
+                    <li>In the service, the function getOneById takes id as parameter and returns $http with
+                        the get method, the api/items/+id url as a promise with .then (response.data) and
+                        .catch ($q.reject) options.</li>
+                    <li>In the controller, we inject the $stateParams service, and we call the service.getOneById function
+                        with ($stateParams.id) as parameter with .then ($scope.item = item) and .catch (error) options.</li>
+
+                </ol>
+
+            </li>
+
+            <li><b>Update one by id (put):</b>
+                <ol>
+                    <li>In the service, the function putUpdateOne takes item as parameter and returns $http with
+                    the get method, the api/items/+item.id, and data: item as a promise with .then
+                        (updated item: response.config.data.title) and .catch ($q.reject) options.</li>
+                    <li>In the controller, the $scope.save function calls the service.putUpdateOne function with
+                    $scope.item as parameter with .then (item) and .catch (error) options.</li>
+
+                </ol>
+
+
+            </li>
+
+            <li><b>Delete one:</b></li>
+            <ol>
+                <li>In the service, the function deleteOne takes id as parameter and returns $http with
+                    the delete method, the api/items/+id url as a promise with .then ("deleted") and
+                    .catch ($q.reject) options.</li>
+                <li>In the controller, we call the service.deleteOne function
+                    with (bookId) as parameter with .then ("deleted" and page reload with)
+                    <code>$state.go($state.current, {}, {reload: true});</code> and .catch (error) options.</li>
+
+            </ol>
+
+
+        </ul>
+
+
+        <p><b>Shorcuts: $http.get(url, [config]);</b></p>
+        <ul>
+            <li>Get and delete: url and config</li>
+            <li>Post and update: url, data and config</li>
+
+        </ul>
+
+
+
+        <p><b>Examples:</b></p>
+
+        <ul>
+            <li><a ui-sref="getAll">Get all.</a></li>
+            <li>Get One by Id and Update One: click on the "Edit" button of the previous page.</li>
+        </ul>
+
+
+    </div>
+
+
+</div>

@@ -1,0 +1,15 @@
+<div ng-controller="ControllerDecorator002">
+
+
+    <p>This decorator directive is added to a div as an attribute and when the user makes click
+    in the div, the directive watches that click and changes a boolean variable when that happens.
+    As a result, an ng-class that was conditioned by the boolean variable, activates a new css attribute
+    that changes the color of the elements that are inside the div.</p>
+
+    <div class="well" decorator002 ng-class="{rojo: seleccionado}">
+        <p>seleccionado: {{seleccionado}}</p>
+        <p>Click on this text and its color will change.</p>
+    </div>
+
+
+</div>

@@ -1,0 +1,11 @@
+<div class="well" ng-controller="ControllerStructural002">
+
+    <p structural002="showit">
+        Lazy rendering means that this piece of code will be created only if the user clicks the button.
+        This is what ng-if does, which is different from what ng-show and ng-hide do (the code is created
+        but it has a display:none attribute).
+    </p>
+
+    <button class="btn btn-default" ng-click="showit = true">Show it!</button>
+
+</div>

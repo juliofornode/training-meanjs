@@ -1,0 +1,61 @@
+<div ng-controller="WDcontroller" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">Services created with the Provider Function.</h3>
+
+    </div>
+
+    <div class="panel-body">
+
+
+        <p><b>Important notes about the provider function:</b></p>
+        <ul>
+
+            <li>Defined by <code>$provide.provider('serviceName', callback)</code></li>
+
+            <li>Instead of using the <code>app.config(function ($provide)
+                { $provide.provider('serviceName', callback</code>, Angular
+                allows us to use the short version <code>app.provider('serviceName', callback</code></li>
+
+            <li>The name of the provider will be serviceNameProvider.</li>
+
+            <li>Inside the callback, <code>this.$get</code> is equal to another function that
+                is the one that defines the service.</li>
+
+            <li>The function that defines the service normally follows the module pattern:
+            first we define variables and methods, then we return an object that will have
+            those variables and methods as attributes.</li>
+
+            <li>The provider function is a little bit more complicated than the other
+            ways to create services, but it allows you to configure the provider that creates
+            the service.</li>
+
+            <li>The way we configure the underlying provider is by including getters and setters in
+            the provider function.</li>
+
+
+
+
+        </ul>
+
+
+
+        <p>Examples of Services created with the Provider Function:</p>
+
+        <ul>
+
+            <li ng-repeat="widget in widgets">
+                <b>{{ widget.name }}</b> - {{ widget.description }}
+                <p><a ui-sref='{{ widget.state }}'>Link to the example</a></p>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+
+
+</div>

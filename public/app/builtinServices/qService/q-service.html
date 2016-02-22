@@ -1,0 +1,53 @@
+<div ng-controller="ControllerQ" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">The $q Service: promises.</h3>
+
+    </div>
+
+
+    <div class="panel-body">
+
+
+        <p><b>This is a promise coming from a service with a delay of 2 seconds: {{ libro }}</b></p>
+
+        <p><b>Notes:</b></p>
+        <ul>
+            <li>We normally use promises to deal with data coming from the server. It's like saying: "ask for this data
+            to the server, and if you get it do this, or in case of error do that".</li>
+        </ul>
+
+
+        <p><b>Process to create and use a simple promise:</b></p>
+        <ol>
+            <li>We inject $q in the factory function that creates the custom service.</li>
+            <li>For demonstration purposes, we'll use $timeout to simulate the delay that we would experience if we
+            ask for data to the server. $timeout executes a callback after a waiting period in miliseconds.</li>
+            <li>Instead or returning the data, we set the custom service to return a promise of the data. We do that by
+            creating a promise with <code>var myPromise = $q.defer();</code> and then returning <code>myPromise.promise;</code>
+            </li>
+            <li>In order to set what the promise is going to deliver in case of success or failure, we use <code>myPromise.resolve()
+            </code> and <code>myPromise.reject()</code>.</li>
+            <li>In the controller, we run the service function that gets the promise and use <code>.then(success, failure)</code>
+            to set the two ways to proceed. The success function will have the data as parameter, and the failure
+            function will have the error message as parameter.</li>
+            <li>As an alternative to <code>.then(success, failure)</code> we can use <code>.then(success).catch(failure)</code>.
+                It give us a higher degree of control.</li>
+            <li>We can also make that the promise sends notifications to the user while it is retrieving the data. We
+            do that by using <code>myPromise.notify()</code> in the factory function and including the getter function
+            as a callback to the <code>.then()</code> in the controller. In this example we are logging the notification in
+            the console.</li>
+            <li>In case we want to do something no matter the promise is a success or a failure, we can specify that
+            using <code>.finally()</code>.</li>
+            <li>We can execute a group of promises with <code>$q.all(promise1, promise2)</code>. If we do so, we will get
+            the resulting data in an array (each promise result will be an element of the array).</li>
+
+
+        </ol>
+
+
+    </div>
+
+
+</div>

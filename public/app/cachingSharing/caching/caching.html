@@ -1,0 +1,90 @@
+<div ng-controller="ControllerCaching" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">$resource for simple RESTful APIs.</h3>
+
+    </div>
+
+
+    <div class="panel-body">
+
+        <p><b>Notes:</b></p>
+        <ul>
+            <li>We use caching to avoid reloading data from the server. We say: if this
+            data has not changed, you do not need to reload it from the server, just
+            take it from the cache memory of the client and you will save time doing that.</li>
+            <li>$cacheFactory is an AngularJS built-in service that allows you to store and retrieve discrete
+            pieces of data in your application.</li>
+            <li>$cacheFactory simply create cache objects that store the given data.</li>
+            <li>Caching $http request improves performance significantly.</li>
+
+        </ul>
+
+        <p><b>Basic operations with $cacheFactory:</b></p>
+        <ul>
+            <li>Create a cache object: <code>var x = $cacheFactory('objectName')</code></li>
+            <li>Retrieve an existing one: <code>var y = $cacheFactory.get('o')</code></li>
+            <li>By injecting $cacheFactory, you can access your cache objects wherever.</li>
+
+        </ul>
+
+        <p><b>Methods to manage a cache object:</b></p>
+        <ul>
+            <li>put(key, value): adds a new value to the object.</li>
+            <li>get(key): retrieve a value.</li>
+            <li>remove(key): remove a value.</li>
+            <li>removeAll(): remove all items in the object.</li>
+            <li>destroy(): remove the object.</li>
+            <li>info(): basic info about the object (name, size...)</li>
+            <li>To remove the cache when the data changed in the server, just include
+                <code>cachedObjectName.remove(valueName)</code> at the end of the functions that
+            perform the operations that change the database (add, edit and remove)</li>
+        </ul>
+
+
+
+        <p><b>Example of $cacheFactory:</b></p>
+
+        <input ng-model="newCacheKey" placeholder="Key">
+        <input ng-model="newCacheValue" placeholder="Value">
+        <button ng-click="saveToCachedObject(newCacheKey, newCacheValue)">saveToCachedObject</button>
+
+        <p ng-if="keys.length">Cached Values from cachedObject.get(key)</p>
+        <div ng-repeat="key in keys">
+            <span>{{ key }}</span>
+            <span>: </span>
+            <b>{{ cachedObject.get(key) }}</b>
+        </div>
+
+        <br>
+        <p>Cache Info</p>
+        <div ng-repeat="(key, value) in cachedObject.info()">
+            <span>{{ key }}</span>
+            <span>: </span>
+            <b>{{ value }}</b>
+        </div>
+
+
+
+        <br>
+        <p><b>Caching $http requests.</b></p>
+        <ul>
+            <li>Caching $http requests is a good way to improve the performance of our application. Doing that is like
+            saying: store the data in the cache and reload it from the server only when it has changed.</li>
+            <li>In order to cache an $http request, we just have to include the option <code>cache: true</code> in
+            the $http object configuration.</li>
+            <li>Once we have the cachingObject generated, we must clear the cache every time data changes (it happens
+            with operations like update or remove). To do that, we first get the cached object doing
+                <code>var cachingObject = $cacheFactory.get('$http')</code> and then call
+                <code>cachingObject.remove('api/books')</code></li>
+            <li>We have an example of this <a ui-sref="getAll">here</a>. Important: see the comments written before
+                the clearCache function in networkingServices/httpService/httpService.js</li>
+        </ul>
+
+
+
+    </div>
+
+
+</div>
